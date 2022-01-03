@@ -1,0 +1,5 @@
+target 'foobar-ios-app' do
+  use_frameworks!
+  platform :ios, '14.1'
+  pod 'foobar_shared', :path => '../foobar-shared'
+end

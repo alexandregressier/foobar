@@ -1,0 +1,6 @@
+framework module Pods_foobar_ios_app {
+  umbrella header "Pods-foobar-ios-app-umbrella.h"
+
+  export *
+  module * { export * }
+}

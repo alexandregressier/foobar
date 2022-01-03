@@ -1,0 +1,16 @@
+PODS:
+  - foobar_shared (1.0)
+
+DEPENDENCIES:
+  - foobar_shared (from `../foobar-shared`)
+
+EXTERNAL SOURCES:
+  foobar_shared:
+    :path: "../foobar-shared"
+
+SPEC CHECKSUMS:
+  foobar_shared: 90d6b224e0fb57da31e658bffa008ab7ee2f0dc7
+
+PODFILE CHECKSUM: 204da5b5191e5f23dab41826f8307a3dc23cfa2b
+
+COCOAPODS: 1.11.2
