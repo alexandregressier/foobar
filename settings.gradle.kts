@@ -1,11 +1,36 @@
+// Plugins -----------------------------------------------------------------------------------------
+
 pluginManagement {
     repositories {
-        google()
         gradlePluginPortal()
+        google()
         mavenCentral()
     }
 }
 
-rootProject.name = "Foo_Bar"
-include(":foobar-android-app")
-include(":foobar-shared")
+plugins {
+    id("de.fayard.refreshVersions") version "0.30.1"
+}
+
+refreshVersions {
+    rejectVersionIf {
+        candidate.stabilityLevel.isLessStableThan(current.stabilityLevel)
+    }
+}
+
+// Dependencies ------------------------------------------------------------------------------------
+
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Projects ----------------------------------------------------------------------------------------
+
+rootProject.name = "FooBar"
+include(
+    ":foobar-shared",
+    ":foobar-android-app",
+)

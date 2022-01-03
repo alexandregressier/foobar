@@ -1,22 +1,21 @@
-buildscript {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0")
-        classpath("com.android.tools.build:gradle:7.2.0-alpha06")
-    }
+// Versions ----------------------------------------------------------------------------------------
+
+val versionGradle by extra("7.3.3")
+
+// Plugins -----------------------------------------------------------------------------------------
+
+plugins {
+    kotlin("android") apply false
+    id("com.android.application") apply false
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+// Tasks -------------------------------------------------------------------------------------------
 
-tasks.register("clean", Delete::class) {
-    delete(rootProject.buildDir)
+tasks {
+    wrapper {
+        gradleVersion = versionGradle
+    }
+    register<Delete>("clean") {
+        delete(rootProject.buildDir)
+    }
 }
