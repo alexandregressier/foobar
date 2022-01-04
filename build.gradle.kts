@@ -19,6 +19,12 @@ plugins {
     id("com.android.application") apply false
 }
 
+buildscript {
+    dependencies {
+        classpath(Google.dagger.hilt.android.gradlePlugin)
+    }
+}
+
 doctor {
     disallowCleanTaskDependencies.set(false)
 }

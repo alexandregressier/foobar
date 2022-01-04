@@ -14,6 +14,8 @@ val versionMinAndroidApi: Int by rootProject.extra
 plugins {
     kotlin("android")
     id("com.android.application")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -81,4 +83,8 @@ dependencies {
 
     // Activity
     implementation(AndroidX.activity.compose)
+
+    // Hilt
+    implementation(Google.dagger.hilt.android)
+    kapt(Google.dagger.hilt.compiler)
 }
