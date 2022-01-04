@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Android" pattern="file[foobar.foobar-android-app]:*/||file[foobar.foobar-shared]:src/androidMain/*/||file[foobar.foobar-shared]:src/androidTest/*/" />
+</component>

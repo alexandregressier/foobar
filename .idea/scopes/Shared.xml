@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Shared" pattern="file[foobar.foobar-shared]:*||file[foobar.foobar-shared]:src/commonMain/*/||file[foobar.foobar-shared.commonMain]:*/||file[foobar.foobar-shared]:src/commonTest/*/||file[foobar.foobar-shared.commonTest]:*/" />
+</component>
