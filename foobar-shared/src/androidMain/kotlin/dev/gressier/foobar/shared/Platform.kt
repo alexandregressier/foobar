@@ -1,4 +1,4 @@
-package dev.gressier.foobar
+package dev.gressier.foobar.shared
 
 actual class Platform actual constructor() {
     actual val platform: String = "Android ${android.os.Build.VERSION.SDK_INT}"

@@ -1,68 +1,115 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+// Properties --------------------------------------------------------------------------------------
+
+val versionFooBarAndroid: String by rootProject.extra
+val versionCodeFooBarAndroid: Int by rootProject.extra
+val versionFooBarShared: String by rootProject.extra
+
+val versionJava: JavaVersion by rootProject.extra
+val versionAndroidApi: Int by rootProject.extra
+val versionMinAndroidApi: Int by rootProject.extra
+val versionMinIos: String by rootProject.extra
+
+// Plugins -----------------------------------------------------------------------------------------
+
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
 }
 
-version = "1.0"
+version = versionFooBarShared
 
 kotlin {
     android()
-    iosX64()
-    iosArm64()
-    //iosSimulatorArm64() sure all ios dependencies support this target
+    ios()
 
-    cocoapods {
-        summary = "Some description for the Shared Module"
-        homepage = "Link to the Shared Module homepage"
-        ios.deploymentTarget = "14.1"
-        podfile = project.file("../foobar-ios-app/Podfile")
-        framework {
-            baseName = "FooBarShared"
-        }
-    }
-    
     sourceSets {
-        val commonMain by getting
+        // Common ----------------------------------------------------------------------------------
+
+        val commonMain by getting {
+            dependencies {
+
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
             }
         }
-        val androidMain by getting
+
+        // Android ---------------------------------------------------------------------------------
+
+        val androidMain by getting {
+            dependencies {
+
+            }
+        }
         val androidTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
                 implementation(Testing.junit4)
             }
         }
-        val iosX64Main by getting
-        val iosArm64Main by getting
-        //val iosSimulatorArm64Main by getting
-        val iosMain by creating {
-            dependsOn(commonMain)
-            iosX64Main.dependsOn(this)
-            iosArm64Main.dependsOn(this)
-            //iosSimulatorArm64Main.dependsOn(this)
+
+        // iOS -------------------------------------------------------------------------------------
+
+        val iosMain by getting {
+            dependencies {
+
+            }
         }
-        val iosX64Test by getting
-        val iosArm64Test by getting
-        //val iosSimulatorArm64Test by getting
-        val iosTest by creating {
-            dependsOn(commonTest)
-            iosX64Test.dependsOn(this)
-            iosArm64Test.dependsOn(this)
-            //iosSimulatorArm64Test.dependsOn(this)
+        val iosTest by getting {
+            dependencies {
+
+            }
+        }
+    }
+
+    cocoapods {
+        summary = "Some description for the Shared Module"
+        homepage = "https://example.com"
+        ios.deploymentTarget = versionMinIos
+        podfile = project.file("../foobar-ios-app/Podfile")
+        framework {
+            baseName = "FooBarShared"
         }
     }
 }
 
 android {
-    compileSdk = 32
+    compileSdk = versionAndroidApi
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+
     defaultConfig {
-        minSdk = 26
-        targetSdk = 32
+        minSdk = versionMinAndroidApi
+        targetSdk = versionAndroidApi
+    }
+    compileOptions {
+        sourceCompatibility = versionJava
+        targetCompatibility = sourceCompatibility
+    }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+}
+
+// Tasks -------------------------------------------------------------------------------------------
+
+tasks {
+    withType<KotlinCompile>().configureEach {
+        kotlinOptions {
+            jvmTarget = "$versionJava"
+//            freeCompilerArgs = freeCompilerArgs + listOf(
+//                "-Xopt-in=${
+//                    listOf(
+//                    ).joinToString(",")
+//                }"
+//            )
+        }
     }
 }
