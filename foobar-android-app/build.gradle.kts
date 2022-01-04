@@ -1,27 +1,84 @@
+import de.fayard.refreshVersions.core.versionFor
+
+// Properties --------------------------------------------------------------------------------------
+
+val versionFooBarAndroid: String by rootProject.extra
+val versionCodeFooBarAndroid: Int by rootProject.extra
+
+val versionJava: JavaVersion by rootProject.extra
+val versionAndroidApi: Int by rootProject.extra
+val versionMinAndroidApi: Int by rootProject.extra
+
+// Plugins -----------------------------------------------------------------------------------------
+
 plugins {
-    id("com.android.application")
     kotlin("android")
+    id("com.android.application")
 }
 
 android {
-    compileSdk = 32
+    compileSdk = versionAndroidApi
+
     defaultConfig {
-        applicationId = "dev.gressier.foobar.android"
-        minSdk = 26
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = "dev.gressier"
+        minSdk = versionMinAndroidApi
+        targetSdk = versionAndroidApi
+        versionCode = versionCodeFooBarAndroid
+        versionName = versionFooBarAndroid
     }
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = versionJava
+        targetCompatibility = sourceCompatibility
+    }
+    kotlinOptions {
+        jvmTarget = "${compileOptions.sourceCompatibility}"
+//        freeCompilerArgs = freeCompilerArgs + listOf(
+//            "-Xopt-in=${
+//                listOf(
+//                ).joinToString(",")
+//            }"
+//        )
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = versionFor(AndroidX.compose.ui)
+    }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
 }
 
+// Dependencies ------------------------------------------------------------------------------------
+
 dependencies {
     implementation(project(":foobar-shared"))
-    implementation(Google.android.material)
-    implementation(AndroidX.appCompat)
-    implementation(AndroidX.constraintLayout)
+
+    // Core
+    implementation(AndroidX.core.ktx)
+
+    // Compose
+    implementation(AndroidX.compose.ui)
+    implementation(AndroidX.compose.ui.toolingPreview)
+
+    // Material
+    implementation(AndroidX.compose.material)
+
+    // Lifecycle
+    implementation(AndroidX.lifecycle.runtimeKtx)
+
+    // Activity
+    implementation(AndroidX.activity.compose)
 }
