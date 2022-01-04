@@ -14,8 +14,13 @@ val versionMinIos by extra("14.1")
 // Plugins -----------------------------------------------------------------------------------------
 
 plugins {
+    id("com.osacky.doctor")
     kotlin("android") apply false
     id("com.android.application") apply false
+}
+
+doctor {
+    disallowCleanTaskDependencies.set(false)
 }
 
 // Tasks -------------------------------------------------------------------------------------------
