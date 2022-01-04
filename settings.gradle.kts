@@ -29,7 +29,7 @@ dependencyResolutionManagement {
 
 // Projects ----------------------------------------------------------------------------------------
 
-rootProject.name = "FooBar"
+rootProject.name = "foobar"
 include(
     ":foobar-shared",
     ":foobar-android-app",
