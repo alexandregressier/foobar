@@ -1,9 +1,7 @@
-package dev.gressier.foobar.presentation.greeting
+package dev.gressier.foobar.presentation.foo
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -13,13 +11,11 @@ import dev.gressier.foobar.presentation.FooBarTheme
 import dev.gressier.foobar.shared.Greeting
 
 @Composable
-fun GreetingView() {
+fun FooView() {
     val greet = Greeting().greeting()
 
     Box(
-        Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colors.background),
+        Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
     ) {
         Text(greet)
@@ -28,8 +24,8 @@ fun GreetingView() {
 
 @Preview(showBackground = true)
 @Composable
-private fun GreetingView_Preview() {
+private fun FooView_Preview() {
     FooBarTheme {
-        GreetingView()
+        FooView()
     }
 }

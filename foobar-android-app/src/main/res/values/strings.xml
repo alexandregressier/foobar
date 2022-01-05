@@ -1,3 +1,7 @@
 <resources>
     <string name="appName">Foo Bar</string>
+
+    <!-- View Titles -->
+    <string name="viewTitle_foo">Foo</string>
+    <string name="viewTitle_bar">Bar</string>
 </resources>

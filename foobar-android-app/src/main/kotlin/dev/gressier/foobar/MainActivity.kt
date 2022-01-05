@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import dagger.hilt.android.AndroidEntryPoint
 import dev.gressier.foobar.presentation.FooBarTheme
-import dev.gressier.foobar.presentation.greeting.GreetingView
+import dev.gressier.foobar.presentation.ViewGroup
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             FooBarTheme {
-                GreetingView()
+                ViewGroup()
             }
         }
     }
