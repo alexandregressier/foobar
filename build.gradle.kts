@@ -4,14 +4,13 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 val versionFooBarAndroid by extra("0.1.0")
 val versionCodeFooBarAndroid by extra(1)
-val versionFooBarIos by extra("0.1.0")
 val versionFooBarShared by extra("0.1.0")
 
 val versionGradle by extra("7.3.3")
 val versionJava by extra(JavaVersion.VERSION_11)
 val versionAndroidApi by extra(32)
 val versionMinAndroidApi by extra(26)
-val versionMinIos by extra("14.1")
+val versionMinIos by extra("15.0")
 
 // Plugins -----------------------------------------------------------------------------------------
 

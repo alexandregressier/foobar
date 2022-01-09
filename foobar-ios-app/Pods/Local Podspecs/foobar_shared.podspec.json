@@ -1,10 +1,10 @@
 {
   "name": "foobar_shared",
-  "version": "1.0",
-  "homepage": "Link to the Shared Module homepage",
+  "version": "0.1.0",
+  "homepage": "https://example.com",
   "source": {
     "git": "Not Published",
-    "tag": "Cocoapods/foobar_shared/1.0"
+    "tag": "Cocoapods/foobar_shared/0.1.0"
   },
   "authors": "",
   "license": "",
@@ -13,7 +13,7 @@
   "libraries": "c++",
   "module_name": "foobar_shared_umbrella",
   "platforms": {
-    "ios": "14.1"
+    "ios": "15.0"
   },
   "pod_target_xcconfig": {
     "KOTLIN_PROJECT_PATH": ":foobar-shared",

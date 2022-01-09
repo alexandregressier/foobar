@@ -274,14 +274,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4B20283E86C255487EB4791905035404 /* Debug */ = {
+		21F7E9CEC6C6115D50A0DA3D70B7207F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 18CA17B62278C8522274B6223353B7F4 /* foobar_shared.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -290,6 +290,24 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		24A0B86E6D6B5F6B1C4B8C0319A3699C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D80B4A2B89B1469F01FF03DFB804D6CE /* foobar_shared.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 		5145E0EF89168C5C4C4F9CA75FA53C79 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -457,24 +475,6 @@
 			};
 			name = Debug;
 		};
-		B6680AE38EDE70CA9FEF38E565B7A36F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D80B4A2B89B1469F01FF03DFB804D6CE /* foobar_shared.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		CFFA81C1F35733ED4BDB4B193459F08C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 11E3FF4E3167C08977D4DE29AA0A0D65 /* Pods-foobar-ios-app.debug.xcconfig */;
@@ -536,8 +536,8 @@
 		D93F1F342A18D4895F954C1C802FBFF7 /* Build configuration list for PBXAggregateTarget "foobar_shared" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4B20283E86C255487EB4791905035404 /* Debug */,
-				B6680AE38EDE70CA9FEF38E565B7A36F /* Release */,
+				21F7E9CEC6C6115D50A0DA3D70B7207F /* Debug */,
+				24A0B86E6D6B5F6B1C4B8C0319A3699C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

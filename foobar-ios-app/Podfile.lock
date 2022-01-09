@@ -1,5 +1,5 @@
 PODS:
-  - foobar_shared (1.0)
+  - foobar_shared (0.1.0)
 
 DEPENDENCIES:
   - foobar_shared (from `../foobar-shared`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../foobar-shared"
 
 SPEC CHECKSUMS:
-  foobar_shared: 90d6b224e0fb57da31e658bffa008ab7ee2f0dc7
+  foobar_shared: 38d14be894c2bb0b906869e932ca4d051eb2407b
 
 PODFILE CHECKSUM: 204da5b5191e5f23dab41826f8307a3dc23cfa2b
 

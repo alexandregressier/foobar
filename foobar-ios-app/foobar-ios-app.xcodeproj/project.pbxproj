@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
-		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		2152FB042600AC8F00CF470E /* FooBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* FooBarApp.swift */; };
 		43804D4ECC69411FD767ED1A /* Pods_foobar_ios_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7027F9C1D552667C89638108 /* Pods_foobar_ios_app.framework */; };
-		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		FA761F09278AFE7F0052FD77 /* FooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA761F08278AFE7F0052FD77 /* FooView.swift */; };
+		FA761F0C278AFE960052FD77 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA761F0B278AFE960052FD77 /* BarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		2152FB032600AC8F00CF470E /* FooBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooBarApp.swift; sourceTree = "<group>"; };
 		7027F9C1D552667C89638108 /* Pods_foobar_ios_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foobar_ios_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF7B242A565900829871 /* foobar-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "foobar-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A40C1682824D77C013DABF4D /* Pods-foobar-ios-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foobar-ios-app.debug.xcconfig"; path = "Target Support Files/Pods-foobar-ios-app/Pods-foobar-ios-app.debug.xcconfig"; sourceTree = "<group>"; };
 		D63360E0A0C1BA16FF960C8B /* Pods-foobar-ios-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foobar-ios-app.release.xcconfig"; path = "Target Support Files/Pods-foobar-ios-app/Pods-foobar-ios-app.release.xcconfig"; sourceTree = "<group>"; };
+		FA761F08278AFE7F0052FD77 /* FooView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooView.swift; sourceTree = "<group>"; };
+		FA761F0B278AFE960052FD77 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +69,10 @@
 		7555FF7D242A565900829871 /* foobar-ios-app */ = {
 			isa = PBXGroup;
 			children = (
-				058557BA273AAA24004C7B11 /* Assets.xcassets */,
-				7555FF82242A565900829871 /* ContentView.swift */,
+				FA761F05278AFE4D0052FD77 /* Presentation */,
+				2152FB032600AC8F00CF470E /* FooBarApp.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
-				2152FB032600AC8F00CF470E /* iOSApp.swift */,
+				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
 			);
 			path = "foobar-ios-app";
@@ -90,8 +92,32 @@
 				A40C1682824D77C013DABF4D /* Pods-foobar-ios-app.debug.xcconfig */,
 				D63360E0A0C1BA16FF960C8B /* Pods-foobar-ios-app.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA761F05278AFE4D0052FD77 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FA761F06278AFE620052FD77 /* Foo */,
+				FA761F07278AFE680052FD77 /* Bar */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FA761F06278AFE620052FD77 /* Foo */ = {
+			isa = PBXGroup;
+			children = (
+				FA761F08278AFE7F0052FD77 /* FooView.swift */,
+			);
+			path = Foo;
+			sourceTree = "<group>";
+		};
+		FA761F07278AFE680052FD77 /* Bar */ = {
+			isa = PBXGroup;
+			children = (
+				FA761F0B278AFE960052FD77 /* BarView.swift */,
+			);
+			path = Bar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,8 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
-				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				FA761F0C278AFE960052FD77 /* BarView.swift in Sources */,
+				2152FB042600AC8F00CF470E /* FooBarApp.swift in Sources */,
+				FA761F09278AFE7F0052FD77 /* FooView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -304,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -321,13 +348,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"foobar-ios-app/Preview Content\"";
+				DEVELOPMENT_TEAM = LUT85NJ27F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "foobar-ios-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "orgIdentifier.foobar-ios-app";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gressier.foobar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,13 +370,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"foobar-ios-app/Preview Content\"";
+				DEVELOPMENT_TEAM = LUT85NJ27F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "foobar-ios-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "orgIdentifier.foobar-ios-app";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gressier.foobar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
