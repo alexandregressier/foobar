@@ -44,10 +44,11 @@ fun ViewGroup() {
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
                 val currentDestination = navBackStackEntry?.destination
                 View.values.forEach { view ->
+                    val isSelected = currentDestination?.hierarchy?.any { it.route == view.route } == true
                     BottomNavigationItem(
                         icon = { Icon(view.icon, contentDescription = view.title) },
                         label = { Text(view.title) },
-                        selected = currentDestination?.hierarchy?.any { it.route == view.route } == true,
+                        selected = isSelected,
                         onClick = {
                             navController.navigate(view.route) {
                                 popUpTo(navController.graph.findStartDestination().id) {
