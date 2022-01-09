@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+
 // Properties --------------------------------------------------------------------------------------
 
 val versionFooBarAndroid by extra("0.1.0")
@@ -27,6 +29,23 @@ buildscript {
 
 doctor {
     disallowCleanTaskDependencies.set(false)
+}
+
+// Projects ----------------------------------------------------------------------------------------
+
+subprojects {
+    afterEvaluate {
+        project.extensions.findByType<KotlinMultiplatformExtension>()?.let { ext ->
+            ext.sourceSets.removeAll { sourceSet ->
+                setOf(
+                    "androidAndroidTestRelease",
+                    "androidTestFixtures",
+                    "androidTestFixturesDebug",
+                    "androidTestFixturesRelease",
+                ).contains(sourceSet.name)
+            }
+        }
+    }
 }
 
 // Tasks -------------------------------------------------------------------------------------------
