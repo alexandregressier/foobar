@@ -94,4 +94,7 @@ dependencies {
 
     // Accompanist
     implementation(Google.Accompanist.systemuicontroller)
+
+    // Debugging
+    debugImplementation(Square.LeakCanary.android)
 }
