@@ -1,4 +1,4 @@
-package dev.gressier.foobar.presentation
+package dev.gressier.foobar.android.presentation
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
@@ -15,8 +15,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import dev.gressier.foobar.presentation.bar.BarView
-import dev.gressier.foobar.presentation.foo.FooView
+import dev.gressier.foobar.android.presentation.bar.BarView
+import dev.gressier.foobar.android.presentation.foo.FooView
 
 private sealed class View(
     val route: String,

@@ -1,11 +1,10 @@
-package dev.gressier.foobar
+package dev.gressier.foobar.android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import dagger.hilt.android.AndroidEntryPoint
-import dev.gressier.foobar.presentation.FooBarTheme
-import dev.gressier.foobar.presentation.ViewGroup
+import dev.gressier.foobar.android.presentation.ViewGroup
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

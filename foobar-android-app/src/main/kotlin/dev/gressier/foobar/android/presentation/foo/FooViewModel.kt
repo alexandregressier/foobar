@@ -1,4 +1,4 @@
-package dev.gressier.foobar.presentation.foo
+package dev.gressier.foobar.android.presentation.foo
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

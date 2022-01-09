@@ -1,4 +1,4 @@
-package dev.gressier.foobar.presentation
+package dev.gressier.foobar.android
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
