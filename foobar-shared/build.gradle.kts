@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 // Properties --------------------------------------------------------------------------------------
@@ -17,6 +19,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    id("io.kotest.multiplatform")
 }
 
 version = versionFooBarShared
@@ -35,6 +38,8 @@ kotlin {
         }
         val commonTest by getting {
             dependencies {
+                implementation("io.kotest:kotest-framework-engine:_")
+                implementation(Testing.kotest.assertions.core)
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
             }
@@ -49,8 +54,7 @@ kotlin {
         }
         val androidTest by getting {
             dependencies {
-                implementation(kotlin("test-junit"))
-                implementation(Testing.junit4)
+                implementation(Testing.kotest.runner.junit5)
             }
         }
 
@@ -104,12 +108,18 @@ tasks {
     withType<KotlinCompile>().configureEach {
         kotlinOptions {
             jvmTarget = "$versionJava"
-//            freeCompilerArgs = freeCompilerArgs + listOf(
-//                "-Xopt-in=${
-//                    listOf(
-//                    ).joinToString(",")
-//                }"
-//            )
+        }
+    }
+    withType<Test>().configureEach {
+        useJUnitPlatform()
+        filter {
+            isFailOnNoMatchingTests = false
+        }
+        testLogging {
+            showExceptions = true
+            showStandardStreams = true
+            events = setOf(TestLogEvent.PASSED, TestLogEvent.FAILED)
+            exceptionFormat = TestExceptionFormat.SHORT
         }
     }
 }
