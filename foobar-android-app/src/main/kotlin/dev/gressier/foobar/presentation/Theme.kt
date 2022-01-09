@@ -4,11 +4,13 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 // Colors ------------------------------------------------------------------------------------------
 
@@ -53,10 +55,14 @@ fun FooBarTheme(
     useDarkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {
-    MaterialTheme(
-        colors = if (useDarkTheme) DarkColors else LightColors,
-        Typography,
-        Shapes,
-        content,
-    )
+    val systemUiController = rememberSystemUiController()
+    val colors = if (useDarkTheme) DarkColors else LightColors
+
+    SideEffect {
+        systemUiController.setSystemBarsColor(
+            color = colors.surface,
+            darkIcons = !useDarkTheme,
+        )
+    }
+    MaterialTheme(colors, Typography, Shapes, content)
 }

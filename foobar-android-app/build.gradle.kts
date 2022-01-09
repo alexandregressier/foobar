@@ -91,4 +91,7 @@ dependencies {
     // Navigation
     implementation(AndroidX.navigation.compose)
     implementation(AndroidX.hilt.navigationCompose)
+
+    // Accompanist
+    implementation(Google.Accompanist.systemuicontroller)
 }
