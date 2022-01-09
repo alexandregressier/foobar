@@ -12,13 +12,13 @@ import dev.gressier.foobar.shared.Greeting
 
 @Composable
 fun FooView() {
-    val greet = Greeting().greeting()
+    val greeting = Greeting().greeting()
 
     Box(
         Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
     ) {
-        Text(greet)
+        Text(greeting)
     }
 }
 

@@ -2,10 +2,10 @@ import FooBarShared
 import SwiftUI
 
 struct FooView: View {
-    let greet = Greeting().greeting()
+    let greeting = Greeting().greeting()
 
     var body: some View {
-        Text(greet)
+        Text(greeting)
     }
 }
 
