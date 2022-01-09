@@ -9,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
@@ -17,9 +16,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import dev.gressier.foobar.presentation.bar.BarView
-import dev.gressier.foobar.presentation.bar.BarViewModel
 import dev.gressier.foobar.presentation.foo.FooView
-import dev.gressier.foobar.presentation.foo.FooViewModel
 
 private sealed class View(
     val route: String,
@@ -69,11 +66,11 @@ fun ViewGroup() {
     ) { innerPadding ->
         NavHost(navController, startDestination = View.Foo.route, Modifier.padding(innerPadding)) {
             composable(View.Foo.route) {
-                val viewModel = hiltViewModel<FooViewModel>()
+//                val viewModel = hiltViewModel<FooViewModel>()
                 FooView()
             }
             composable(View.Bar.route) {
-                val viewModel = hiltViewModel<BarViewModel>()
+//                val viewModel = hiltViewModel<BarViewModel>()
                 BarView()
             }
         }
